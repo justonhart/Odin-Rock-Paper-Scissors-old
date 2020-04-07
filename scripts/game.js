@@ -54,26 +54,6 @@ function computerPlay(){
     return "scissors";
 }
 
-function game(){
-    let playerWins = 0;
-    let computerWins = 0;
-    
-    for(let i = 0; i < 5; i++){
-        let result = playRound(prompt("Rock, paper, or scissors?").toLowerCase(), computerPlay());
-        if(result.includes("win"))
-            playerWins++;
-        else if(result.includes("lose"))
-            computerWins++;
-        else
-            i--;
-        
-        console.log(result);
-        alert(result);
-    }
-
-    console.log(`You won ${playerWins} times! Computer won ${computerWins} times!`);
-}
-
 function updateScores(winner){
     let playerWins = Number(document.getElementById("playerScore").innerHTML.slice(-1));
     let computerWins = Number(document.getElementById("computerScore").innerHTML.slice(-1));
