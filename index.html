@@ -20,4 +20,13 @@
         <input type="button" id="Paper" value="Paper!" onclick="playRound('paper',computerPlay())">
         <input type="button" id="Scissors" value="Scissors!" onclick="playRound('scissors',computerPlay())">
     </div>
+    <div id="scores">
+        <p id="playerScore">Player score: 0</p>
+        <p id="computerScore">Computer score: 0</p>
+    </div>
+    <div id="replay" hidden>
+        <p id="final"></p>
+        <p>Wanna play again? <input type="button" value="Replay!" onclick="window.location.reload()"></p>
+        
+    </div>
 </body>
