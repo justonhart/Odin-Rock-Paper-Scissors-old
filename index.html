@@ -1,58 +1,23 @@
-<script>
+<!DOCTYPE html5>
+<head>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="scripts/game.js"></script>
+</head>
+<header>
+    Rock! Paper! Scissors!!
+</header>
+<body>
 
-    game();
-
-    function playRound(playerChoice, computerChoice){
-        if(playerChoice === computerChoice)
-            return "It's a draw!"
-        
-        else{
-            if(playerChoice == "rock"){
-                if(computerChoice == "paper")
-                    return "You lose! Paper beats Rock!";
-                else
-                    return "You win! Rock beats Paper!";
-            }
-            else if(playerChoice == "paper"){
-                if(computerChoice == "scissors")
-                    return "You lose! Scissors beats Paper!";
-                else   
-                    return "You win! Paper beats Rock!";
-            }
-            else{
-                if(computerChoice == "rock")
-                    return "You lose! Rock beats Scissors!";
-                else
-                    return "You win! Scissors beats Paper!";
-            }
-        }
-    }
     
-    function computerPlay(){
-        let choice;
-        let i = Math.random();
-        if(i < .33) return "rock";
-        if(i < .66) return "paper";
-        return "scissors";
-    }
-
-    function game(){
-        let playerWins = 0;
-        let computerWins = 0;
-        
-        for(let i = 0; i < 5; i++){
-            let result = playRound(prompt("Rock, paper, or scissors?").toLowerCase(), computerPlay());
-            if(result.includes("win"))
-                playerWins++;
-            else if(result.includes("lose"))
-                computerWins++;
-            else
-                i--;
-            
-            console.log(result);
-            alert(result);
-        }
-
-        console.log(`You won ${playerWins} times! Computer won ${computerWins} times!`);
-    }
-</script>
+    <!-- Opponent window -->
+    <div id="matchResult">
+        Choose your weapon!
+    </div>
+    <!-- Three buttons for choices -->
+    <div id="buttonPanel">
+        <input type="button" id="Rock" value="Rock!" onclick="playRound('rock',computerPlay())">
+        <input type="button" id="Paper" value="Paper!" onclick="playRound('paper',computerPlay())">
+        <input type="button" id="Scissors" value="Scissors!" onclick="playRound('scissors',computerPlay())">
+    </div>
+</body>
